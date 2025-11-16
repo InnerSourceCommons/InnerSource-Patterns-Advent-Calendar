@@ -677,7 +677,7 @@
 		calendarDays = [].slice.call(calendarEl.children),
 		settings = {
 			snow: true,
-			tilt: true
+			tilt: false
 		},
 		bgEl = document.body,
 		defaultBgColor = bgEl.style.backgroundColor,
