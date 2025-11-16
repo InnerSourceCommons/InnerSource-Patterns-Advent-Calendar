@@ -277,6 +277,9 @@
 			self._hidePreviewTitle();
 			self._hideContent();
 
+			// Clear URL hash
+			window.history.pushState(null, null, window.location.pathname + window.location.search);
+
 			// Show the main container
 			anime({
 				targets: self.el,
@@ -365,6 +368,9 @@
 			self.isAnimating = true;
 			self.isOpen = true;
 			self.currentDayIdx = instance.number;
+
+			// Update URL hash
+			window.history.pushState(null, null, '#day-' + (instance.number + 1));
 
 			// Hide the main container
 			anime({
@@ -680,14 +686,47 @@
 		contents = contentEl.querySelectorAll('.content__block'),
 		backCtrl = contentEl.querySelector('.btn-back'),
 		contentNumber = contentEl.querySelector('.content__number'),
-		isMobile = mobilecheck();
+		isMobile = mobilecheck(),
+		calendarInstance;
 
 	function init() {
 		layout();
+		checkURLHash();
+		
+		// Listen for hash changes (browser back/forward)
+		window.addEventListener('hashchange', function() {
+			var hash = window.location.hash;
+			if (!hash || hash === '') {
+				// No hash means go back to calendar
+				if (calendarInstance && calendarInstance.isOpen) {
+					backCtrl.click();
+				}
+			} else {
+				// Hash exists, open that day
+				checkURLHash();
+			}
+		});
+	}
+
+	// Function to check URL hash and open corresponding day
+	function checkURLHash() {
+		var hash = window.location.hash;
+		if (hash && hash.startsWith('#day-')) {
+			var dayNumber = parseInt(hash.replace('#day-', '')) - 1; // Convert to 0-based index
+			if (calendarInstance && dayNumber >= 0 && dayNumber < calendarInstance.days.length) {
+				var day = calendarInstance.days[dayNumber];
+				if (day.isActive) {
+					// Small delay to ensure everything is initialized
+					setTimeout(function() {
+						day.cube.click();
+					}, 100);
+				}
+			}
+		}
 	}
 
 	function layout() {
-		new Calendar(calendarEl);
+		calendarInstance = new Calendar(calendarEl);
 		// If settings.snow === true then create the canvas element for the snow effect.
 		if( settings.snow ) {
 			var snow = new Snow();
