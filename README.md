@@ -6,7 +6,7 @@ An advent calendar for 2025, to highlight InnerSource patterns that need your he
 
 - create content for the calendar / e.g. pick patterns from [this list](https://github.com/InnerSourceCommons/InnerSourcePatterns/issues/772) that could be improved
 - (optional) hide days until that day is reached i.e. only once we reach December 1st, 2025 the 1st "door" in the advent calendar can be opened
-- (optional) create individual URLs for each day (so that we can share individual days on social media etc)
+- **(done)** create individual URLs for each day (so that we can share individual days on social media etc)
 
 ## Assessment for my use case
 

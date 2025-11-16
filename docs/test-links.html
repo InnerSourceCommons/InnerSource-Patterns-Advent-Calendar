@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Direct Links - Advent Calendar</title>
+    <style>
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 3px solid #E0ECF5;
+            padding-bottom: 10px;
+        }
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .day-link {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .day-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-color: #E0ECF5;
+        }
+        .day-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #E0ECF5;
+            margin-bottom: 10px;
+        }
+        .day-title {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .inactive {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .instructions {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #E0ECF5;
+        }
+        .instructions p {
+            margin: 10px 0;
+        }
+        .instructions code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎄 Advent Calendar - Test Direct Links</h1>
+    
+    <div class="instructions">
+        <h2>How to Test:</h2>
+        <p>Click on any active day below to see the URL change and the calendar open to that specific day.</p>
+        <p>Notice how the browser URL updates to include <code>#day-N</code></p>
+        <p>You can copy and share these URLs directly!</p>
+    </div>
+
+    <div class="link-grid">
+        <a href="index.html#day-1" class="day-link">
+            <div class="day-number">1</div>
+            <div class="day-title">Welcome</div>
+        </a>
+        
+        <a href="index.html#day-2" class="day-link">
+            <div class="day-number">2</div>
+            <div class="day-title">Code of Conduct</div>
+        </a>
+        
+        <a href="index.html#day-3" class="day-link">
+            <div class="day-number">3</div>
+            <div class="day-title">Balancing Openness</div>
+        </a>
+        
+        <a href="index.html#day-4" class="day-link">
+            <div class="day-number">4</div>
+            <div class="day-title">InnerSource Ambassadors</div>
+        </a>
+        
+        <a href="index.html#day-5" class="day-link">
+            <div class="day-number">5</div>
+            <div class="day-title">Live Freely</div>
+        </a>
+        
+        <a href="index.html#day-6" class="day-link">
+            <div class="day-number">6</div>
+            <div class="day-title">Tolerable Planet</div>
+        </a>
+        
+        <a href="index.html#day-7" class="day-link">
+            <div class="day-number">7</div>
+            <div class="day-title">Normal</div>
+        </a>
+        
+        <a href="index.html#day-8" class="day-link">
+            <div class="day-number">8</div>
+            <div class="day-title">Superhero</div>
+        </a>
+        
+        <a href="index.html#day-9" class="day-link">
+            <div class="day-number">9</div>
+            <div class="day-title">New Weariness</div>
+        </a>
+        
+        <a href="index.html#day-10" class="day-link">
+            <div class="day-number">10</div>
+            <div class="day-title">The Sinner</div>
+        </a>
+        
+        <a href="index.html#day-11" class="day-link">
+            <div class="day-number">11</div>
+            <div class="day-title">Intellectual Wealth</div>
+        </a>
+        
+        <a href="index.html#day-12" class="day-link">
+            <div class="day-number">12</div>
+            <div class="day-title">Limiting Principle</div>
+        </a>
+        
+        <a href="index.html#day-13" class="day-link">
+            <div class="day-number">13</div>
+            <div class="day-title">Quaintly Free</div>
+        </a>
+        
+        <a href="index.html#day-14" class="day-link">
+            <div class="day-number">14</div>
+            <div class="day-title">On A Level</div>
+        </a>
+        
+        <a href="index.html#day-15" class="day-link">
+            <div class="day-number">15</div>
+            <div class="day-title">Experiences</div>
+        </a>
+        
+        <a href="index.html#day-16" class="day-link">
+            <div class="day-number">16</div>
+            <div class="day-title">Entrenched</div>
+        </a>
+        
+        <a href="index.html#day-17" class="day-link">
+            <div class="day-number">17</div>
+            <div class="day-title">Happiness</div>
+        </a>
+        
+        <a href="index.html#day-18" class="day-link">
+            <div class="day-number">18</div>
+            <div class="day-title">Working Jobs</div>
+        </a>
+        
+        <a href="index.html#day-19" class="day-link">
+            <div class="day-number">19</div>
+            <div class="day-title">Spending Billions</div>
+        </a>
+        
+        <a href="index.html#day-20" class="day-link">
+            <div class="day-number">20</div>
+            <div class="day-title">Principle Of Having</div>
+        </a>
+        
+        <a href="index.html#day-21" class="day-link">
+            <div class="day-number">21</div>
+            <div class="day-title">Enemies</div>
+        </a>
+        
+        <a href="index.html#day-22" class="day-link">
+            <div class="day-number">22</div>
+            <div class="day-title">Better World</div>
+        </a>
+        
+        <a href="index.html#day-23" class="day-link inactive">
+            <div class="day-number">23</div>
+            <div class="day-title">Coming Soon</div>
+        </a>
+        
+        <a href="index.html#day-24" class="day-link inactive">
+            <div class="day-number">24</div>
+            <div class="day-title">Coming Soon</div>
+        </a>
+        
+        <a href="index.html#day-25" class="day-link inactive">
+            <div class="day-number">25</div>
+            <div class="day-title">Coming Soon</div>
+        </a>
+    </div>
+    
+    <div style="margin-top: 40px; text-align: center;">
+        <a href="index.html" style="display: inline-block; padding: 15px 30px; background: #E0ECF5; color: #333; text-decoration: none; border-radius: 5px; font-weight: bold;">
+            Back to Calendar
+        </a>
+    </div>
+</body>
+</html>
