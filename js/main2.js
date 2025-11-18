@@ -200,14 +200,20 @@
 		this.days = [];
 		var self = this;
 		this.calendarDays.forEach(function(d, pos) {
-			// Get the bg color defined in the data-bg-color of each division.
+			// Advent calendar logic: only activate days that have been reached
+			var today = new Date(2025, 11, 5); // Simulates December 5, 2025: //new Date();
+			var year = 2025;
+			var month = 11; // December (0-based)
+			var dayOfMonth = pos + 1;
+			var unlockDate = new Date(year, month, dayOfMonth);
+			var isActive = today >= unlockDate && !d.hasAttribute('data-inactive');
 			var day = new Day({
-					number: pos,
-					color: d.getAttribute('data-bg-color') || '#f1f1f1',
-					previewTitle: d.getAttribute('data-title') || '',
-					inactive: d.hasAttribute('data-inactive')
-				}),
-				content = contents[pos];
+				number: pos,
+				color: d.getAttribute('data-bg-color') || '#f1f1f1',
+				previewTitle: d.getAttribute('data-title') || '',
+				inactive: !isActive
+			}),
+			content = contents[pos];
 
 			if( content !== undefined ) {
 				var contentTitle = contents[pos].querySelector('.content__title');
