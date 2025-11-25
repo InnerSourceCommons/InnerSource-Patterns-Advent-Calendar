@@ -88,7 +88,12 @@
 		*/
 		this.cube = document.createElement('div');
 		this.cube.className = this.isActive ? 'cube' : 'cube cube--inactive';
-		this.cube.innerHTML = '<div class="cube__side cube__side--back"></div><div class="cube__side cube__side--left"></div><div class="cube__side cube__side--right"></div><div class="cube__side cube__side--bottom"></div><div class="cube__side cube__side--top"></div><div class="cube__side cube__side--front"><div class="cube__number">' + (this.number+1) + '</div></div>';
+		// Check for image attribute
+		var imgSrc = '';
+		if (this.options.img) {
+			imgSrc = '<img src="' + this.options.img + '" alt="Day ' + (this.number+1) + ' image" class="cube__img" style="width:80%;height:auto;display:block;margin:0 auto;" />';
+		}
+		this.cube.innerHTML = '<div class="cube__side cube__side--back">' + imgSrc + '</div><div class="cube__side cube__side--left"></div><div class="cube__side cube__side--right"></div><div class="cube__side cube__side--bottom"></div><div class="cube__side cube__side--top"></div><div class="cube__side cube__side--front"><div class="cube__number">' + (this.number+1) + '</div></div>';
 		this.currentTransform = {translateZ: 0, rotateX: 0, rotateY: 0};
 	};
 
@@ -201,7 +206,7 @@
 		var self = this;
 		this.calendarDays.forEach(function(d, pos) {
 			// Advent calendar logic: only activate days that have been reached
-			var today = new Date(2025, 11, 5); // Simulates December 5, 2025: //new Date();
+			var today = new Date(2025, 11, 10); // Simulates December 5, 2025: //new Date();
 			var year = 2025;
 			var month = 11; // December (0-based)
 			var dayOfMonth = pos + 1;
@@ -211,6 +216,7 @@
 				number: pos,
 				color: d.getAttribute('data-bg-color') || '#f1f1f1',
 				previewTitle: d.getAttribute('data-title') || '',
+				img: d.getAttribute('data-img'),
 				inactive: !isActive
 			}),
 			content = contents[pos];
