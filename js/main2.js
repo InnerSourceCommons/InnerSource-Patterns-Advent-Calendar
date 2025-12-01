@@ -206,7 +206,8 @@
 		var self = this;
 		this.calendarDays.forEach(function(d, pos) {
 			// Advent calendar logic: only activate days that have been reached
-			var today = new Date(2025, 11, 25); // Simulates December 5, 2025: //new Date();
+			// var today = new Date(2025, 11, 25); // Simulates December 25, 2025
+			var today = new Date(); // Current date
 			var year = 2025;
 			var month = 11; // December (0-based)
 			var dayOfMonth = pos + 1;
